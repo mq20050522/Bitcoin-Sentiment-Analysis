@@ -9,7 +9,7 @@ from pyspark.sql.functions import regexp_replace, col
 
 spark = SparkSession.builder     .appName("TwitterCSV")     .getOrCreate()
 
-path = "/storage/home/mfl5839/work/englishtweets.csv"  # or .csv, name doesn't matter
+path = "/storage/home/xxx/work/englishtweets.csv"  # change your input directory
 
 df = spark.read     .option("header", "true")     .option("sep", ";")     .option("quote", '"')     .option("escape", '"')     .option("multiLine", "true")     .option("mode", "PERMISSIVE")     .csv(path)
 
