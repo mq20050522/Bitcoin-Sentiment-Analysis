@@ -24,17 +24,15 @@ clean_df = df.withColumn(
     )
 )
 
+clean_df = clean_df.select('origen','date','username','user_fullname','n_replies','n_likes','n_retweets','text','tweet_language')
+
 (clean_df.write
    .mode("overwrite")
    .option("header", True)
    .option("quoteAll", True)      # wrap everything in quotes
    .option("escape", '"')         # escape quotes inside text
    .option("multiLine", True)     # handle long text with internal newlines
-   .csv("/storage/home/mfl5839/work/output_folder"))
-
-clean_df = clean_df.select('origen','date','username','user_fullname','n_replies','n_likes','n_retweets','text','tweet_language')
-
-clean_df.write     .mode("overwrite")     .option("header", "true")     .csv("output_folder")
+   .csv("/storage/home/xxx/work/output_folder")) # change to your own directory
 
 
 # In[ ]:
